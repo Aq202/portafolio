@@ -1,0 +1,145 @@
+.banner{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.backgroundMosaic{
+  background-color: #C1C1C1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 20px;
+
+}
+
+.column{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+
+.purpleColumn {
+ background-color: #ffffff;
+
+}
+
+.blackColumn{
+  background-color: black;
+}
+
+
+.imageContainer{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.textContainer{
+  width: 100%;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.nameContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.nameContainer > span{
+  color:#C1C1C1;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.nameContainer > h1{
+  color: white;
+  font-size: 60px;
+  margin: 0;
+  
+}
+
+.imageContainer img{
+  width: 400px;
+}
+
+.writeText{
+  font-size: 30px;
+  margin-top: calc(25vh + 60px);
+  font-weight: 500;
+
+}
+
+.circlesContainer{
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.circle{
+  aspect-ratio: 1/1;
+  background-color: white;
+}
+
+.circle1{
+  width: 40px;
+  border-radius: 20px;
+
+}
+
+.circle2{
+  width: 80px;
+  border-radius: 40px;
+  margin-left: 40px;
+
+}
+
+.circlesContainerUp{
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  transform: rotate(0.5turn);
+}
+
+.circlesContainerUp .circle{
+  background-color: black;
+}
+
+.arrowDownButton{
+  position: absolute;padding: 15px;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: black;
+  border-radius: 5px;
+  transition: transform .3s ease;
+}
+
+.arrowIcon{
+  color: white;
+  font-size: 20px;
+}
+
+.arrowDownButton:hover{
+  transform: translateY(-5px) !important;
+}

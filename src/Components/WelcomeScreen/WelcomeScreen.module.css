@@ -1,0 +1,55 @@
+.welcomeScreen{
+
+  --animation-time: 2.5s;
+
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  background-color: #221437;
+  filter: saturate(0%) ;
+  transition: filter var(--animation-time) ease;
+  flex-direction: column;
+
+}
+
+.imageBanner{
+  width: 400px;
+}
+
+@property --size {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 300px;
+}
+
+.darkness{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  transition: all .3s ease;
+  background: radial-gradient(circle at 50% calc(100% - 100px), transparent 0%, rgb(0, 0, 0) var(--size));
+  transition: --size var(--animation-time) ease;
+}
+
+.welcomeScreen.turnOn .darkness{
+  --size:200vw;
+}
+
+.welcomeScreen.turnOn{
+}
+
+@keyframes turnLight{
+  to {
+  }
+}
+
+.text{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  color: white;
+  z-index: 1000;
+}
