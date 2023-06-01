@@ -3,8 +3,8 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import TypeIt from 'typeit-react';
 import { ImArrowDown2 as ArrowDown } from 'react-icons/im';
+import avatar from '@assets/avatarAnimado.png';
 import styles from './Banner.module.css';
-import avatar from '../../../assets/avatarAnimado.png';
 
 function Banner() {
   const blackColumnRef = useRef();

@@ -17,5 +17,24 @@
         "react"
     ],
     "rules": {
+    },
+    "settings": {
+        "import/resolver": {
+            "babel-module": {
+                "alias": {
+                    "@": "./src",
+                    "@components": "./src/components",
+                    "@pages": "./src/pages",
+                    "@services": "./src/services",
+                    "@helpers": "./src/helpers",
+                    "@styles": "./src/styles",
+                    "@assets": "./src/assets",
+                    "@context": "./src/context",
+                    "@hooks": "./src/hooks"
+  
+  
+                }
+            }
+        }
     }
 }
