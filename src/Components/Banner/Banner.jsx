@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 // import PropTypes from 'prop-types';
 import gsap from 'gsap';
 import TypeIt from 'typeit-react';
@@ -7,6 +7,8 @@ import avatar from '@assets/avatarAnimado.png';
 import styles from './Banner.module.css';
 
 function Banner() {
+  const [timeline, setTimeline] = useState();
+
   const blackColumnRef = useRef();
   const purpleColumnRef = useRef();
   const nameText1Ref = useRef();
@@ -19,6 +21,8 @@ function Banner() {
 
   const openAnimation = () => {
     const tl = gsap.timeline({ delay: 0.3 });
+    setTimeline(tl);
+
     tl.fromTo(
       blackColumnRef.current,
       { css: { transform: 'translateY(100%)' }, duration: 1 },
@@ -38,14 +42,21 @@ function Banner() {
       .fromTo(avatarRef.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 1 }, 'name')
       .fromTo(circle1Ref.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1 }, 'name')
       .fromTo(circle2Ref.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1 }, 'name')
-      .fromTo(downButtonRef.current, { opacity: 0 }, { opacity: 1 }, 'name');
+      .fromTo(downButtonRef.current, { opacity: 0 }, { opacity: 1 }, 'name')
+      .eventCallback('onReverseComplete', () => console.log('hola'));
   };
 
   useEffect(() => {
     openAnimation();
   }, []);
+
+  const hola = () => {
+    timeline.reverse();
+  };
   return (
-    <div className={styles.banner}>
+    // eslint-disable-next-line max-len
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+    <div className={styles.banner} onClick={hola}>
       <div className={styles.backgroundMosaic}>
         <div className={`${styles.column} ${styles.blackColumn}`} ref={blackColumnRef} />
         <div className={`${styles.column} ${styles.purpleColumn}`} ref={purpleColumnRef} />
@@ -57,7 +68,7 @@ function Banner() {
             <h1 ref={nameText2Ref}>Diego Aquino</h1>
           </div>
 
-          <h3 ref={writableTextRef}>
+          <h3 ref={writableTextRef} className={styles.writeTextContainer}>
             <TypeIt
               className={styles.writeText}
               options={{

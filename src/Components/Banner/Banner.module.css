@@ -54,6 +54,7 @@
 .nameContainer{
   display: flex;
   flex-direction: column;
+  margin: 0 30px;
 }
 
 .nameContainer > span{
@@ -71,6 +72,10 @@
 
 .imageContainer img{
   width: 400px;
+}
+
+.writeTextContainer{
+  margin: 0 25px;
 }
 
 .writeText{
@@ -142,4 +147,42 @@
 
 .arrowDownButton:hover{
   transform: translateY(-5px) !important;
+}
+
+@media only screen and (max-width:800px){
+  
+  .backgroundMosaic{
+    gap: 0;
+  }
+
+  .imageContainer{
+    justify-content: space-between;
+  }
+
+  .textContainer{
+    grid-template-columns: 1fr;
+    margin-top: 10vh; 
+    
+  }
+
+  .nameContainer span{
+    text-shadow: 2px 2px rgb(0, 0, 0);
+  }
+
+  h1{
+    mix-blend-mode: difference;
+            background-blend-mode: difference;
+  }
+
+  .writeText{
+    color: #c1c1c1;
+    text-shadow: 2px 2px rgb(0, 0, 0);
+  }
+
+  .nameContainer{
+    text-align: center;
+  }
+  .circlesContainerUp, .circlesContainer{
+    display: none;
+  }
 }
