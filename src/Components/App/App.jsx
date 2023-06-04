@@ -1,9 +1,12 @@
 import React from 'react';
-import Carousel from '../Carousel/Carousel';
+import { BrowserRouter as Router } from 'react-router-dom';
+import PageIndex from '../pages/PageIndex/PageIndex';
 
 function App() {
   return (
-    <Carousel />
+    <Router>
+      <PageIndex />
+    </Router>
   );
 }
 

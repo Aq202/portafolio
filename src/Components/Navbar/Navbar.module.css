@@ -1,0 +1,152 @@
+
+header:not(.transparent-effect) nav.navbar{
+  background-color: var(--theme-color--) !important;
+  color:white;
+}
+
+nav.navbar {
+  position: fixed;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--navBar-height--);
+  width: 100%;
+  z-index: 9999;
+  transition: .3s all ease;
+}
+
+nav.navbar:not(.transparent) {
+  background-color: transparent;
+  color: white;
+
+}
+
+nav.navbar.transparent {
+  color: var(--theme-color--);
+  
+}
+
+nav.navbar .logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: flex-end;
+}
+
+
+nav.navbar .logo {
+  background-image: url(../../assets/logo.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 30px;
+  height: 30px;
+  margin-left: 2.5vw;
+  animation: logo-animation 1s forwards;
+}
+
+nav.navbar .logoName {
+  color: var(--navBar-color--);
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: bold;
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation:
+      typing 2s steps(12, end) forwards,
+      blink-caret .75s step-end infinite;
+  animation-delay: 0.5s;
+  width: 170px;
+  visibility: hidden;
+}
+
+nav.navbar ul {
+  color: var(--navBar-color--);
+  font-weight: 550;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  font-family: var(--title-font--);
+}
+
+nav.navbar ul li {
+  margin: 0 2vw 0 2vw;
+  user-select: none;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+nav.navbar ul li:hover {
+  transform: translateY(-5px)
+}
+
+nav.navbar a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*Animacion del logo*/
+@keyframes logo-animation {
+
+
+
+  from {
+      width: calc(var(--navBar-logo-size) + 5px);
+      height: calc(var(--navBar-logo-size) + 5px);
+  }
+}
+
+/*typing animation*/
+@keyframes typing {
+  from {
+      width: 0;
+  }
+
+  to {
+      visibility: visible;
+
+  }
+
+
+}
+
+/* Efecto de parpadeo */
+@keyframes blink-caret {
+  from, to {
+      border-color: transparent
+  }
+
+  50% {
+      border-color: orange;
+  }
+}
+
+
+
+@media only screen and (max-width:460px) {
+  * {
+      --navBar-height--: 70px;
+  }
+
+  nav.navbar {
+      flex-direction: column;
+      justify-content: space-evenly;
+
+  }
+
+  nav.navbar .logo {
+      margin-left: 0;
+  }
+
+
+  nav.navbar .logoName {
+      display: none;
+  }
+
+}

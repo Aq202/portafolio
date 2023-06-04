@@ -4,10 +4,12 @@ import gsap from 'gsap';
 import TypeIt from 'typeit-react';
 import { ImArrowDown2 as ArrowDown } from 'react-icons/im';
 import avatar from '@assets/avatarAnimado.png';
+import { useNavigate } from 'react-router-dom';
 import styles from './Banner.module.css';
 
 function Banner() {
-  const [timeline, setTimeline] = useState();
+  const [closing, setClosing] = useState(false);
+  const navigate = useNavigate();
 
   const blackColumnRef = useRef();
   const purpleColumnRef = useRef();
@@ -18,10 +20,10 @@ function Banner() {
   const circle1Ref = useRef();
   const circle2Ref = useRef();
   const downButtonRef = useRef();
+  const blackBackgroundRef = useRef();
 
   const openAnimation = () => {
     const tl = gsap.timeline({ delay: 0.3 });
-    setTimeline(tl);
 
     tl.fromTo(
       blackColumnRef.current,
@@ -42,21 +44,44 @@ function Banner() {
       .fromTo(avatarRef.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 1 }, 'name')
       .fromTo(circle1Ref.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1 }, 'name')
       .fromTo(circle2Ref.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1 }, 'name')
-      .fromTo(downButtonRef.current, { opacity: 0 }, { opacity: 1 }, 'name')
-      .eventCallback('onReverseComplete', () => console.log('hola'));
+      .fromTo(downButtonRef.current, { opacity: 0 }, { opacity: 1 }, 'name');
+  };
+
+  const closeAnimation = () => {
+    const tl = gsap.timeline({ delay: 0.3 });
+
+    tl.addLabel('name')
+      .fromTo(nameText1Ref.current, { y: 0, opacity: 1 }, { y: -30, opacity: 0 }, 'name')
+      .fromTo(nameText2Ref.current, { y: 0, opacity: 1 }, { y: -30, opacity: 0 }, 'name')
+      .fromTo(writableTextRef.current, { opacity: 1, duration: 1 }, { opacity: 0 }, 'name')
+      .fromTo(avatarRef.current, { y: 0, opacity: 1, duration: 1 }, { y: 30, opacity: 0 }, 'name')
+      .fromTo(circle1Ref.current, { y: 0, opacity: 1 }, { y: 30, opacity: 0 }, 'name')
+      .fromTo(circle2Ref.current, { y: 0, opacity: 1 }, { y: 30, opacity: 0 }, 'name')
+      .fromTo(downButtonRef.current, { opacity: 1 }, { opacity: 0 }, 'name')
+      .fromTo(
+        blackBackgroundRef.current,
+        { css: { top: '100%' }, duration: 1 },
+        { css: { top: 0 }, duration: 1 },
+      )
+      .eventCallback('onComplete', () => {
+        // cambiar de ruta al finalizar animación de salida
+        navigate('/projects');
+      });
   };
 
   useEffect(() => {
     openAnimation();
   }, []);
 
-  const hola = () => {
-    timeline.reverse();
+  const handleCoseClick = () => {
+    if (closing) return;
+    closeAnimation();
+    setClosing(true);
   };
   return (
     // eslint-disable-next-line max-len
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
-    <div className={styles.banner} onClick={hola}>
+    <div className={styles.banner} onClick={handleCoseClick}>
       <div className={styles.backgroundMosaic}>
         <div className={`${styles.column} ${styles.blackColumn}`} ref={blackColumnRef} />
         <div className={`${styles.column} ${styles.purpleColumn}`} ref={purpleColumnRef} />
@@ -104,6 +129,8 @@ function Banner() {
       <button type="button" className={styles.arrowDownButton} ref={downButtonRef}>
         <ArrowDown className={styles.arrowIcon} />
       </button>
+
+      <div className={styles.blackBackground} ref={blackBackgroundRef} />
     </div>
   );
 }

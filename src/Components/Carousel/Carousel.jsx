@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 // import PropTypes from 'prop-types';
 import items from '@helpers/projectsData.js';
 import styles from './Carousel.module.css';
@@ -6,16 +6,26 @@ import CarouselItem from '../CarouselItem/CarouselItem';
 
 function Carousel() {
   const [carrouselScroll, setCarrouselScroll] = useState(0);
+  const setCarouselYPosition = useState(null)[1];
 
-  const handleScroll = (e) => {
-    setCarrouselScroll((val) => {
-      const newValue = val + -e.deltaY;
-      if (newValue > 0) return 0;
-      const maxValue = -items.length * 270;
-      if (newValue < maxValue) return maxValue;
-      return newValue;
+  const carouselRef = useRef();
+
+  const handleScroll = () => {
+    setCarouselYPosition((yPosition) => {
+      const valueToScroll = (carouselRef.current.getBoundingClientRect().top
+     - yPosition) * 3;
+      setCarrouselScroll((val) => {
+        const newValue = val + valueToScroll;
+
+        return newValue;
+      });
+      return carouselRef.current.getBoundingClientRect().top;
     });
   };
+
+  useEffect(() => {
+    setCarouselYPosition(carouselRef.current.getBoundingClientRect().top);
+  }, []);
 
   const calculateCarouselSpin = (scrollValue) => {
     if (scrollValue > 0) return 0;
@@ -23,16 +33,16 @@ function Carousel() {
     if (scrollValue < maxSpin) return maxSpin;
     return scrollValue;
   };
+
   return (
-    <div className={styles.container} onWheel={handleScroll}>
-      <h1 className={styles.pageTitle} style={{ marginTop: carrouselScroll / 2.5 }}>
-        Mis Proyectos
-      </h1>
+    <div className={styles.container} onScroll={handleScroll}>
+      <h1 className={styles.pageTitle}>Mis Proyectos</h1>
       <div
         className={styles.carousel}
         style={{
-          transform: `rotateY(${calculateCarouselSpin(carrouselScroll / 5)}deg)`,
+          transform: `rotateY(${calculateCarouselSpin(carrouselScroll / 8)}deg)`,
         }}
+        ref={carouselRef}
       >
         {items.map((item, index) => (
           <CarouselItem

@@ -4,15 +4,23 @@
   display: flex;
   flex-direction: column;
   line-height: 2;
+  animation: appearAnimation 1s;
 }
 
 .carouselItem span{
-  color: rgb(0, 0, 0);
-  text-shadow: 1px 1px 0px rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 0px rgb(0, 0, 0);
 }
 
 .carouselItem img{
   flex: 1;
   width: 100%;
   box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.145);
+}
+
+@keyframes appearAnimation{
+  from{
+    opacity: 0;
+    transform: translateY(-10px);
+  }
 }

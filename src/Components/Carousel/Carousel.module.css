@@ -1,5 +1,7 @@
 .pageTitle{
-  font-size: 50px;
+  font-size: 100px;
+  margin: 0;
+  animation: appearTitle 1s;
 }
 
 .container {
@@ -10,10 +12,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 200px;
-  gap: 10vh;
   overflow: hidden;
   box-sizing: border-box;
+  color: white;
+  gap: 9vh;
+  overflow: auto;
+  padding-top: 150px;
+  padding-bottom: 300px;
 }
 
 .carousel {
@@ -78,4 +83,11 @@
   background: #8c6239;
   top: 500px;
 
+}
+
+@keyframes appearTitle{
+  from{
+    opacity: 0;
+    transform: translateY(-10px);
+  }
 }
