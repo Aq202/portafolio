@@ -1,0 +1,18 @@
+.carouselItem{
+  width: 250px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  line-height: 2;
+}
+
+.carouselItem span{
+  color: rgb(0, 0, 0);
+  text-shadow: 1px 1px 0px rgb(255, 255, 255);
+}
+
+.carouselItem img{
+  flex: 1;
+  width: 100%;
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.145);
+}

@@ -1,9 +1,9 @@
 import React from 'react';
-import Banner from '@components/Banner';
+import Carousel from '../Carousel/Carousel';
 
 function App() {
   return (
-    <Banner />
+    <Carousel />
   );
 }
 
