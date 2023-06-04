@@ -1,0 +1,96 @@
+.projectDetailPage{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+
+}
+
+.pageContainer{
+  padding-top: var(--navBar-height--);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+  background-color: black;
+  opacity: 0;
+}
+
+.headerContainer{
+  position: relative;
+}
+
+.headerContainer h1{
+  font-size: 60px;
+  font-weight: 700;
+  color:white;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 100px 0;
+}
+
+.headerContainer::after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 15px;
+  background-color: #c3c3c3;
+
+}
+
+.projectDataContainer{
+  background-color: white;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 100px 50px;
+  gap: 30px;
+}
+
+.projectDataContainer > div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projectDataContainer > .col1{
+  
+  flex-direction: column;
+  gap: 25px;
+}
+
+.description{
+  display: block;
+  max-width: 80%;
+  margin: auto;
+  font-size: 18px;
+  margin: 0;
+  
+}
+
+.projectDataContainer a{
+  font-size: 18px;
+}
+
+.closeButton{
+  border: none;
+  outline: none;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+}
+
+.closeIcon{
+    font-size: 25px;
+}

@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import Navbar from '../../Navbar/Navbar';
 import ProjectsPage from '../ProjectsPage/ProjectsPage';
 import styles from './NavbarPage.module.css';
+import ProjectDetailPage from '../ProjectDetailPage/ProjectDetailPage';
 
 function NavbarPage() {
   const navbarRef = useRef();
@@ -32,7 +33,8 @@ function NavbarPage() {
       <Navbar refProp={navbarRef} />
       {showContent && (
       <Routes>
-        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/projects/*" element={<ProjectsPage />} />
+        <Route path="/detail" element={<ProjectDetailPage />} />
       </Routes>
       )}
     </div>

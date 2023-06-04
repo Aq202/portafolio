@@ -46,6 +46,7 @@ function Carousel() {
       >
         {items.map((item, index) => (
           <CarouselItem
+            id={index}
             title={item.title}
             image={item.images[0]}
             style={{

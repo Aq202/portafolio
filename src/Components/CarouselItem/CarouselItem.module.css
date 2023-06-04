@@ -5,9 +5,10 @@
   flex-direction: column;
   line-height: 2;
   animation: appearAnimation 1s;
+  text-decoration: none;
 }
 
-.carouselItem span{
+.carouselItem span.title{
   color: rgb(255, 255, 255);
   text-shadow: 1px 1px 0px rgb(0, 0, 0);
 }
