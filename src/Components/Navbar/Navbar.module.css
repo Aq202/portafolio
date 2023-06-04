@@ -5,7 +5,6 @@ header:not(.transparent-effect) nav.navbar{
 }
 
 nav.navbar {
-  position: fixed;
   background-color: transparent;
   display: flex;
   align-items: center;
@@ -17,7 +16,7 @@ nav.navbar {
 }
 
 nav.navbar:not(.transparent) {
-  background-color: transparent;
+  background-color: black;
   color: white;
 
 }

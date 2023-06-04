@@ -5,6 +5,7 @@ import projectsData from '@helpers/projectsData';
 import { BiLeftArrowAlt as CloseIcon } from 'react-icons/bi';
 import { gsap } from 'gsap';
 import { useNavigate, useParams } from 'react-router-dom';
+import { scrollbarGray } from '@styles/scrollbar.module.css';
 import styles from './ProjectDetailPage.module.css';
 import ImagesSlider from '../../ImagesSlider/ImagesSlider';
 
@@ -47,7 +48,7 @@ function ProjectDetailPage() {
 
   return (
     <div className={styles.projectDetailPage}>
-      <div className={styles.pageContainer} ref={pageRef}>
+      <div className={`${styles.pageContainer} ${scrollbarGray}`} ref={pageRef}>
         <div className={styles.headerContainer}>
           <h1>{projectsData[id]?.title}</h1>
           <button type="button" className={styles.closeButton} onClick={closeAnimation}>
@@ -56,6 +57,7 @@ function ProjectDetailPage() {
         </div>
         <div className={styles.projectDataContainer}>
           <div className={styles.col1}>
+            <p className={styles.technologies}>{projectsData[id]?.tec}</p>
             <p className={styles.description}>
               {projectsData[id]?.description}
             </p>

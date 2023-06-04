@@ -1,14 +1,13 @@
 .projectDetailPage{
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - var(--navBar-height--));
   overflow: hidden;
   position: fixed;
-  top: 0;
+  top: var(--navBar-height--);
 
 }
 
 .pageContainer{
-  padding-top: var(--navBar-height--);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -65,11 +64,17 @@
 
 .description{
   display: block;
-  max-width: 80%;
-  margin: auto;
+  width: 80%;
   font-size: 18px;
   margin: 0;
-  
+}
+
+.technologies{
+  display: block;
+  width: 80%;
+  font-size: 16px;
+  margin: 0;
+  color: rgb(115, 115, 115);
 }
 
 .projectDataContainer a{

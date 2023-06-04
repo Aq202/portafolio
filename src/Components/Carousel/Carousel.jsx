@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 // import PropTypes from 'prop-types';
 import items from '@helpers/projectsData.js';
+import { scrollbarGray } from '@styles/scrollbar.module.css';
 import styles from './Carousel.module.css';
 import CarouselItem from '../CarouselItem/CarouselItem';
 
@@ -35,7 +36,7 @@ function Carousel() {
   };
 
   return (
-    <div className={styles.container} onScroll={handleScroll}>
+    <div className={`${styles.container} ${scrollbarGray}`} onScroll={handleScroll}>
       <h1 className={styles.pageTitle}>Mis Proyectos</h1>
       <div
         className={styles.carousel}
