@@ -22,7 +22,3 @@ function AboutMePage() {
 }
 
 export default AboutMePage;
-
-AboutMePage.propTypes = {};
-
-AboutMePage.defaultProps = {};

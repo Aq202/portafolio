@@ -1,4 +1,4 @@
-.imagesSlider{
+.imagesSlider {
   width: 450px;
   height: 300px;
   overflow: hidden;
@@ -6,12 +6,12 @@
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.252);
 }
 
-.imagesContainer{
+.imagesContainer {
   display: flex;
   height: 100%;
 }
 
-.imagesSlider img{
+.imagesSlider img {
   width: 450px;
   height: 100%;
 }

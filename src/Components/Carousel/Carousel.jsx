@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import items from '@helpers/projectsData.js';
 import { scrollbarGray } from '@styles/scrollbar.module.css';
+import CarouselItem from '@components/CarouselItem';
 import styles from './Carousel.module.css';
-import CarouselItem from '../CarouselItem/CarouselItem';
 
 function Carousel() {
   const [carrouselScroll, setCarrouselScroll] = useState(0);

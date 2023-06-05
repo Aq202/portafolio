@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { MdEmail as IconEmail } from 'react-icons/md';
 import { BsGithub as IconGithub, BsLinkedin as IconLinkedin } from 'react-icons/bs';
 import styles from './ContactPage.module.css';
@@ -21,11 +20,3 @@ function ContactPage() {
 }
 
 export default ContactPage;
-
-ContactPage.propTypes = {
-
-};
-
-ContactPage.defaultProps = {
-
-};

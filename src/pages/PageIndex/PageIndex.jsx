@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Banner from '@components/Banner';
 import NavbarPage from '@pages/NavbarPage';
-import serverBase from '../../helpers/serverBase';
+import serverBase from '@helpers/serverBase';
 
 function PageIndex() {
   return (
@@ -14,11 +14,3 @@ function PageIndex() {
 }
 
 export default PageIndex;
-
-PageIndex.propTypes = {
-
-};
-
-PageIndex.defaultProps = {
-
-};

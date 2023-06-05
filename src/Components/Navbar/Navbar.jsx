@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import TypeIt from 'typeit-react';
+import serverBase from '@helpers/serverBase';
 import styles from './Navbar.module.css';
-import serverBase from '../../helpers/serverBase';
 
 function Navbar({ refProp }) {
   return (

@@ -1,4 +1,4 @@
-.projectDetailPage{
+.projectDetailPage {
   width: 100%;
   height: calc(100vh - var(--navBar-height--));
   position: fixed;
@@ -6,7 +6,7 @@
 
 }
 
-.pageContainer{
+.pageContainer {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -17,14 +17,14 @@
   opacity: 0;
 }
 
-.headerContainer{
+.headerContainer {
   position: relative;
 }
 
-.headerContainer h1{
+.headerContainer h1 {
   font-size: 60px;
   font-weight: 700;
-  color:white;
+  color: white;
   text-align: center;
   width: 100%;
   box-sizing: border-box;
@@ -32,7 +32,7 @@
   width: 80%;
 }
 
-.headerContainer::after{
+.headerContainer::after {
   content: "";
   display: block;
   width: 100%;
@@ -41,7 +41,7 @@
 
 }
 
-.projectDataContainer{
+.projectDataContainer {
   background-color: white;
   flex: 1;
   display: grid;
@@ -50,26 +50,26 @@
   gap: 30px;
 }
 
-.projectDataContainer > div{
+.projectDataContainer>div {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.projectDataContainer > .col1{
-  
+.projectDataContainer>.col1 {
+
   flex-direction: column;
   gap: 25px;
 }
 
-.description{
+.description {
   display: block;
   width: 80%;
   font-size: 18px;
   margin: 0;
 }
 
-.technologies{
+.technologies {
   display: block;
   width: 80%;
   font-size: 16px;
@@ -77,11 +77,11 @@
   color: rgb(115, 115, 115);
 }
 
-.projectDataContainer a{
+.projectDataContainer a {
   font-size: 18px;
 }
 
-.closeButton{
+.closeButton {
   border: none;
   outline: none;
   background-color: white;
@@ -96,42 +96,42 @@
   left: 25px;
 }
 
-.closeIcon{
-    font-size: 25px;
+.closeIcon {
+  font-size: 25px;
 }
 
-@media only screen and (max-width: 950px){
-  .projectDataContainer{
+@media only screen and (max-width: 950px) {
+  .projectDataContainer {
     grid-template-columns: 1fr;
     gap: 100px;
   }
 }
 
-@media only screen and (max-width: 550px){
-  
-.headerContainer h1{
-  font-size: 12vw;
+@media only screen and (max-width: 550px) {
+
+  .headerContainer h1 {
+    font-size: 12vw;
+  }
+
+  .projectDataContainer {
+    padding: 100px 5%;
+  }
+
 }
 
-.projectDataContainer{
-  padding: 100px 5%;
-}
+@media only screen and (max-width: 500px) {
 
-}
-
-@media only screen and (max-width: 500px){
-  
-  .slider, .slider img{
+  .slider, .slider img {
     width: 80vw;
   }
-  
-  }
-  
 
-@media only screen and (max-width: 430px){
-  
-  .headerContainer h1{
+}
+
+
+@media only screen and (max-width: 430px) {
+
+  .headerContainer h1 {
     font-size: 15vw;
   }
-  
-  }
+
+}

@@ -1,4 +1,4 @@
-.contactPage{
+.contactPage {
   height: calc(100vh - var(--navBar-height--));
   width: 100%;
   color: white;
@@ -9,14 +9,14 @@
   flex-direction: column;
 }
 
-.contactPage h1{
+.contactPage h1 {
   margin: 0;
   text-align: center;
   font-size: 60px;
   animation: fadeIn 1s ease;
 }
 
-.contactData{
+.contactData {
   display: grid;
   grid-template-columns: min-content 1fr;
   gap: 20px;
@@ -29,43 +29,43 @@
 
 }
 
-.icon{
+.icon {
   width: 30px;
   height: 30px;
   color: #ffd968;
 }
 
-.contactData a{
+.contactData a {
   text-decoration: none;
   color: #dadada;
 }
 
-.contactData span{
+.contactData span {
   display: block;
   overflow: hidden;
   width: 100%;
   word-break: break-all;
 }
 
-.contactData a:hover{
+.contactData a:hover {
   text-decoration: underline;
 }
 
-@media only screen and (max-width:500px){
-  .contactData{
+@media only screen and (max-width:500px) {
+  .contactData {
     font-size: 20px;
   }
 }
 
-@media only screen and (max-width:430px){
-  .contactData{
+@media only screen and (max-width:430px) {
+  .contactData {
     width: 80%;
     grid-template-columns: 1fr;
   }
 }
 
-@media only screen and (max-width:400px){
-  .contactData{
+@media only screen and (max-width:400px) {
+  .contactData {
     font-size: 18px;
 
   }
@@ -73,9 +73,9 @@
 
 @keyframes fadeIn {
 
-  from{
+  from {
     transform: translateY(-20px);
     opacity: 0;
   }
-  
+
 }

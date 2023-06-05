@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-// import PropTypes from 'prop-types';
 import TypeIt from 'typeit-react';
+import avatar from '@assets/avatar.png';
 import styles from './WelcomeScreen.module.css';
-import avatar from '../../assets/avatar.png';
 
 function WelcomeScreen() {
   const [timeCounter, setTimeCounter] = useState(null);
@@ -20,15 +19,13 @@ function WelcomeScreen() {
   const mouseUpHandler = () => {
     clearTimeout(timeCounter);
     if (!turnedOn)setInProgress(false);
-    console.log(instance);
   };
 
   useEffect(() => {
     if (!turnedOn) return;
     instance.empty().type('Gracias.').pause(1000).empty()
 
-      .type('Ahora sí, continuemos.')
-      .flush(() => console.log('TERMINADO'));
+      .type('Ahora sí, continuemos.');
   }, [turnedOn]);
 
   return (
@@ -66,11 +63,3 @@ function WelcomeScreen() {
 }
 
 export default WelcomeScreen;
-
-WelcomeScreen.propTypes = {
-
-};
-
-WelcomeScreen.defaultProps = {
-
-};

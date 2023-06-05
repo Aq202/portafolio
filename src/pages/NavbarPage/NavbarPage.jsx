@@ -3,9 +3,9 @@ import { Route, Routes } from 'react-router-dom';
 import Navbar from '@components/Navbar';
 import AboutMePage from '@pages/AboutMePage';
 import ProjectsPage from '@pages/ProjectsPage';
+import serverBase from '@helpers/serverBase';
+import ContactPage from '@pages/ContactPage';
 import styles from './NavbarPage.module.css';
-import ContactPage from '../ContactPage/ContactPage';
-import serverBase from '../../helpers/serverBase';
 
 function NavbarPage() {
   const navbarRef = useRef();

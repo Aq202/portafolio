@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useEffect, useRef } from 'react';
 import projectsData from '@helpers/projectsData';
 import { BiLeftArrowAlt as CloseIcon } from 'react-icons/bi';
@@ -6,8 +5,8 @@ import { gsap } from 'gsap';
 import { useNavigate, useParams } from 'react-router-dom';
 import { scrollbarGray } from '@styles/scrollbar.module.css';
 import ImagesSlider from '@components/ImagesSlider';
+import serverBase from '@helpers/serverBase';
 import styles from './ProjectDetailPage.module.css';
-import serverBase from '../../helpers/serverBase';
 
 function ProjectDetailPage() {
   const pageRef = useRef();
@@ -72,7 +71,3 @@ function ProjectDetailPage() {
 }
 
 export default ProjectDetailPage;
-
-ProjectDetailPage.propTypes = {};
-
-ProjectDetailPage.defaultProps = {};

@@ -1,4 +1,4 @@
-.pageTitle{
+.pageTitle {
   font-size: 60px;
   margin: 0;
   animation: appearTitle 1s;
@@ -24,7 +24,7 @@
 }
 
 .carousel {
-  
+
   transform-style: preserve-3d;
   transition: transform 1s;
 }
@@ -45,11 +45,11 @@
   left: 0;
 }
 
-.item{
+.item {
   margin-top: -100px;
 }
 
-.container .item:first{
+.container .item:first {
   margin-top: 0;
 }
 
@@ -57,29 +57,34 @@
   transform: rotateY(0deg) translateZ(250px);
   margin-top: 0;
 }
+
 .b {
   transform: rotateY(60deg) translateZ(250px);
   background: #0072bc;
   top: 100px;
 }
+
 .c {
   transform: rotateY(120deg) translateZ(250px);
   background: #39b54a;
   top: 200px;
 
 }
+
 .d {
   transform: rotateY(180deg) translateZ(250px);
   background: #f26522;
   top: 300px;
 
 }
+
 .e {
   transform: rotateY(240deg) translateZ(250px);
   background: #630460;
   top: 400px;
 
-} 
+}
+
 .f {
   transform: rotateY(300deg) translateZ(250px);
   background: #8c6239;
@@ -87,22 +92,22 @@
 
 }
 
-@keyframes appearTitle{
-  from{
+@keyframes appearTitle {
+  from {
     opacity: 0;
     transform: translateY(-10px);
   }
 }
 
-@media only screen and (max-width:500px){
-  .pageTitle{
+@media only screen and (max-width:500px) {
+  .pageTitle {
     font-size: 15vw;
 
   }
 }
 
-@media only screen and (orientation: portrait){
-  .container{
+@media only screen and (orientation: portrait) {
+  .container {
     padding-bottom: 30vh;
   }
 }

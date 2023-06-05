@@ -1,4 +1,4 @@
-.aboutMePage{
+.aboutMePage {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   align-items: center;
@@ -9,78 +9,81 @@
   box-sizing: border-box;
 }
 
-.textContainer{
+.textContainer {
   color: white;
-  padding: 10vh  10%;
+  padding: 10vh 10%;
   height: 100%;
   box-sizing: border-box;
 }
 
-.title{
+.title {
   font-size: 60px;
   margin: 0;
   animation: fadeIn 1s ease;
 }
 
-ul.description{
+ul.description {
   list-style: none;
   font-size: 18px;
   opacity: 0;
   animation: fadeIn 1s ease 0.1s forwards;
 }
 
-.description span{
+.description span {
   line-height: 4;
   font-size: 25px;
-  color:rgb(255, 217, 104);
-  
+  color: rgb(255, 217, 104);
+
 }
 
-.techsBlob{
+.techsBlob {
   opacity: 0;
   animation: fadeIn 1s ease 0.1s forwards;
 }
 
 
-.description li{
+.description li {
   padding-bottom: 30px;
 }
 
 @keyframes fadeIn {
 
-  from{
+  from {
     transform: translateY(-20px);
     opacity: 0;
   }
-  to{
+
+  to {
     transform: translateY(0px);
     opacity: 1;
   }
-  
+
 }
 
-@media only screen and (max-width:900px){
-  .aboutMePage{
+@media only screen and (max-width:900px) {
+  .aboutMePage {
     grid-template-columns: 1fr;
     padding-bottom: 200px;
   }
 }
 
-@media only screen and (max-width:750px){
-  .textContainer{
-    padding: 100px  10%;
+@media only screen and (max-width:750px) {
+  .textContainer {
+    padding: 100px 10%;
   }
-  .title{
+
+  .title {
     text-align: center;
   }
-  ul.description{
+
+  ul.description {
     padding: 0;
   }
 }
 
-@media only screen and (max-width: 430px){
-  
-  .title{
+@media only screen and (max-width: 430px) {
+
+  .title {
     font-size: 15vw;
   }
-  }
+}

@@ -1,12 +1,11 @@
-
-.blobContainer{
+.blobContainer {
   width: 400px;
   height: 200px;
   position: relative;
   align-self: center;
 }
 
-.blob{
+.blob {
   width: 100%;
   height: 100%;
   display: flex;
@@ -16,36 +15,36 @@
   left: 0;
 }
 
-.blob:nth-child(2){
-  filter:blur(30px)
+.blob:nth-child(2) {
+  filter: blur(30px)
 }
 
-.techsContainer{
+.techsContainer {
   position: absolute;
   top: 0;
   z-index: 3;
   width: 100%;
-  height:100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.techItem{
+.techItem {
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 30px;
 }
 
-.techItem img{
+.techItem img {
   width: 40%;
   margin: auto;
   animation: float 10s infinite;
 
 }
 
-.techItem h3{
+.techItem h3 {
   font-size: 25px;
   text-align: center;
   margin: 0;
@@ -53,26 +52,28 @@
 
 @keyframes float {
 
-  0%{
+  0% {
     transform: translateY(0px);
   }
-  25%{
+
+  25% {
     transform: translateY(-10px);
   }
 
-  75%{
+  75% {
     transform: translateY(10px);
   }
-  100%{
+
+  100% {
     transform: translateY(0px);
   }
 
-  
+
 }
 
-@media only screen and (max-width: 430px){
-  
-.blobContainer{
-  width: 90vw;
-}
+@media only screen and (max-width: 430px) {
+
+  .blobContainer {
+    width: 90vw;
+  }
 }

@@ -15,11 +15,3 @@ function ProjectsPage() {
 }
 
 export default ProjectsPage;
-
-ProjectsPage.propTypes = {
-
-};
-
-ProjectsPage.defaultProps = {
-
-};
