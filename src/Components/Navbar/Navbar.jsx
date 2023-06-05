@@ -20,7 +20,7 @@ function Navbar({ refProp }) {
       </NavLink>
       <ul>
         <li>
-          <NavLink className={({ isActive }) => (isActive ? styles.linkActive : '')} to="/yo">
+          <NavLink className={({ isActive }) => (isActive ? styles.linkActive : '')} to="/sobre-mi">
             Sobre mí
           </NavLink>
         </li>

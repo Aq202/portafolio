@@ -15,7 +15,7 @@ function NavbarPage() {
       <Navbar refProp={navbarRef} />
       <Routes>
         <Route path="/portafolio/*" element={<ProjectsPage />} />
-        <Route path="/yo" element={<AboutMePage />} />
+        <Route path="/sobre-mi" element={<AboutMePage />} />
         <Route path="/contacto" element={<ContactPage />} />
       </Routes>
 

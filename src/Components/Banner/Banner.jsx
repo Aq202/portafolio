@@ -73,7 +73,7 @@ function Banner() {
       )
       .eventCallback('onComplete', () => {
         // cambiar de ruta al finalizar animación de salida
-        navigate('/yo');
+        navigate('/sobre-mi');
       });
   };
 
@@ -94,6 +94,7 @@ function Banner() {
       onWheel={handleCoseClick}
       role="button"
       tabIndex="0"
+      style={{ cursor: !lockClosing ? 'pointer' : '' }}
     >
       <div className={styles.backgroundMosaic}>
         <div className={styles.columnResponsive}>
