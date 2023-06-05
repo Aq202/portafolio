@@ -1,13 +1,12 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useEffect, useRef } from 'react';
-// import PropTypes from 'prop-types';
 import projectsData from '@helpers/projectsData';
 import { BiLeftArrowAlt as CloseIcon } from 'react-icons/bi';
 import { gsap } from 'gsap';
 import { useNavigate, useParams } from 'react-router-dom';
 import { scrollbarGray } from '@styles/scrollbar.module.css';
+import ImagesSlider from '@components/ImagesSlider';
 import styles from './ProjectDetailPage.module.css';
-import ImagesSlider from '../../ImagesSlider/ImagesSlider';
 
 function ProjectDetailPage() {
   const pageRef = useRef();

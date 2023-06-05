@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Banner from '@components/Banner';
-import NavbarPage from '../NavbarPage/NavbarPage';
+import NavbarPage from '@pages/NavbarPage';
 
 function PageIndex() {
   return (

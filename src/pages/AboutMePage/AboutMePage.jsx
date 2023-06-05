@@ -1,7 +1,6 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import TechsBlob from '@components/TechsBlob';
 import styles from './AboutMePage.module.css';
-import TechsBlob from '../../TechsBlob/TechsBlob';
 
 function AboutMePage() {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Carousel from '../../Carousel/Carousel';
-import ProjectDetailPage from '../ProjectDetailPage/ProjectDetailPage';
+import Carousel from '@components/Carousel';
+import ProjectDetailPage from '@pages/ProjectDetailPage';
 
 function ProjectsPage() {
   return (

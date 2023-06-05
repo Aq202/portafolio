@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Navbar from '../../Navbar/Navbar';
-import ProjectsPage from '../ProjectsPage/ProjectsPage';
+import Navbar from '@components/Navbar';
+import AboutMePage from '@pages/AboutMePage';
+import ProjectsPage from '@pages/ProjectsPage';
 import styles from './NavbarPage.module.css';
-import AboutMePage from '../AboutMePage/AboutMePage';
 
 function NavbarPage() {
   const navbarRef = useRef();
