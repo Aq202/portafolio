@@ -24,11 +24,13 @@
 
 .purpleColumn {
  background-color: #ffffff;
+ transform: translateY(-100%);
 
 }
 
 .blackColumn{
   background-color: black;
+  transform: translateY(100%);
 }
 
 
@@ -61,21 +63,24 @@
   color:#C1C1C1;
   font-size: 30px;
   font-weight: 400;
+  opacity: 0;
 }
 
 .nameContainer > h1{
   color: white;
   font-size: 60px;
   margin: 0;
-  
+  opacity: 0;
 }
 
 .imageContainer img{
   width: 400px;
+  opacity: 0;
 }
 
 .writeTextContainer{
   margin: 0 25px;
+  opacity: 0;
 }
 
 .writeText{
@@ -91,6 +96,7 @@
   left: 30px;
   display: flex;
   flex-direction: column;
+  opacity: 0;
 }
 
 .circle{
@@ -118,6 +124,7 @@
   display: flex;
   flex-direction: column;
   transform: rotate(0.5turn);
+  opacity: 0;
 }
 
 .circlesContainerUp .circle{
@@ -138,6 +145,7 @@
   background-color: black;
   border-radius: 5px;
   transition: transform .3s ease;
+  opacity: 0;
 }
 
 .arrowIcon{

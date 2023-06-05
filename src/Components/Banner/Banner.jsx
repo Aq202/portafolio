@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import styles from './Banner.module.css';
 
 function Banner() {
-  const [closing, setClosing] = useState(false);
+  const [lockClosing, setLockClosing] = useState(true);
   const navigate = useNavigate();
 
   const blackColumnRef = useRef();
@@ -44,7 +44,8 @@ function Banner() {
       .fromTo(avatarRef.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 1 }, 'name')
       .fromTo(circle1Ref.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1 }, 'name')
       .fromTo(circle2Ref.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1 }, 'name')
-      .fromTo(downButtonRef.current, { opacity: 0 }, { opacity: 1 }, 'name');
+      .fromTo(downButtonRef.current, { opacity: 0 }, { opacity: 1 }, 'name')
+      .eventCallback('onComplete', () => setLockClosing(false));
   };
 
   const closeAnimation = () => {
@@ -74,14 +75,19 @@ function Banner() {
   }, []);
 
   const handleCoseClick = () => {
-    if (closing) return;
+    if (lockClosing) return;
     closeAnimation();
-    setClosing(true);
+    setLockClosing(true);
   };
   return (
-    // eslint-disable-next-line max-len
-    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
-    <div className={styles.banner} onClick={handleCoseClick}>
+    <div
+      className={styles.banner}
+      onClick={handleCoseClick}
+      onKeyUp={handleCoseClick}
+      onWheel={handleCoseClick}
+      role="button"
+      tabIndex="0"
+    >
       <div className={styles.backgroundMosaic}>
         <div className={`${styles.column} ${styles.blackColumn}`} ref={blackColumnRef} />
         <div className={`${styles.column} ${styles.purpleColumn}`} ref={purpleColumnRef} />
