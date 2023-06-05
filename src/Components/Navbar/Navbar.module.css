@@ -40,18 +40,15 @@ nav.navbar .logoName {
   font-family: monospace;
   font-size: 20px;
   font-weight: bold;
-  overflow: hidden;
-  border-right: .15em solid orange;
   white-space: nowrap;
   margin: 0 auto;
   letter-spacing: .15em;
-  animation:
-    typing 2s steps(12, end) forwards,
-    blink-caret .75s step-end infinite;
-  animation-delay: 0.5s;
-  width: 170px;
-  visibility: hidden;
 }
+
+.logoName span{
+  color:#ffd968 !important;
+}
+
 
 nav.navbar ul {
   color: var(--navBar-color--);
@@ -94,38 +91,6 @@ nav.navbar a {
   display: flex;
   align-items: center;
 }
-
-/*typing animation*/
-@keyframes typing {
-  from {
-    width: 0;
-  }
-
-  to {
-    visibility: visible;
-
-  }
-
-
-}
-
-/* Efecto de parpadeo */
-@keyframes blink-caret {
-  from, to {
-    border-color: transparent
-  }
-
-  50% {
-    border-color: orange;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-}
-
 
 @media only screen and (max-width:600px) {
   * {

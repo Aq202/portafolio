@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import TypeIt from 'typeit-react';
 import styles from './Navbar.module.css';
 
 function Navbar({ refProp }) {
@@ -8,7 +9,14 @@ function Navbar({ refProp }) {
     <nav className={styles.navbar} ref={refProp}>
       <NavLink to="/" className={styles.logoContainer}>
         <div className={styles.logo} />
-        <span className={styles.logoName}>Diego Aquino</span>
+        <TypeIt
+          className={styles.logoName}
+          options={{
+            strings: ['Diego Aquino'],
+            speed: 200,
+            waitUntilVisible: true,
+          }}
+        />
       </NavLink>
       <ul>
         <li>

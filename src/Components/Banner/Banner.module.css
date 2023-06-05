@@ -66,6 +66,8 @@
   justify-items: center;
   align-items: center;
   z-index: 2;
+  position: fixed;
+  top: 20vh;
 }
 
 .nameContainer {
@@ -91,6 +93,7 @@
 .imageContainer img {
   width: 400px;
   opacity: 0;
+  max-height: 80vh;
 }
 
 .writeTextContainer {
@@ -103,6 +106,7 @@
   font-weight: 500;
   display: flex;
   justify-content: center;
+  text-shadow: 2px 2px white;
 }
 
 .circlesContainer {
@@ -211,7 +215,7 @@
   .textContainer {
     grid-template-columns: 1fr;
     margin-top: 10vh;
-
+    position: static;
   }
 
   .nameContainer span {
@@ -232,6 +236,16 @@
     text-align: center;
   }
 
+  .circlesContainerUp, .circlesContainer {
+    display: none;
+  }
+
+  .imageContainer img {
+    max-height: 45vh;
+  }
+}
+
+@media only screen and (max-height:500px){
   .circlesContainerUp, .circlesContainer {
     display: none;
   }
