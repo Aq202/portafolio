@@ -4,6 +4,7 @@ import Navbar from '@components/Navbar';
 import AboutMePage from '@pages/AboutMePage';
 import ProjectsPage from '@pages/ProjectsPage';
 import styles from './NavbarPage.module.css';
+import ContactPage from '../ContactPage/ContactPage';
 
 function NavbarPage() {
   const navbarRef = useRef();
@@ -15,6 +16,7 @@ function NavbarPage() {
       <Routes>
         <Route path="/portafolio/*" element={<ProjectsPage />} />
         <Route path="/yo" element={<AboutMePage />} />
+        <Route path="/contacto" element={<ContactPage />} />
       </Routes>
 
     </div>
