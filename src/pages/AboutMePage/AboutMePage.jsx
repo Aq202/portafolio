@@ -1,10 +1,11 @@
 import React from 'react';
 import TechsBlob from '@components/TechsBlob';
+import { scrollbarGray } from '@styles/scrollbar.module.css';
 import styles from './AboutMePage.module.css';
 
 function AboutMePage() {
   return (
-    <div className={styles.aboutMePage}>
+    <div className={`${styles.aboutMePage} ${scrollbarGray}`}>
       <div className={styles.textContainer}>
         <h1 className={styles.title}>Sobre mí</h1>
         <ul className={styles.description}>

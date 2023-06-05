@@ -17,13 +17,12 @@ function ProjectDetailPage() {
     const tl = gsap.timeline();
 
     tl
-      .set(pageRef.current, { css: { overflow: 'hidden', opacity: 1 } })
+      .set(pageRef.current, { css: { opacity: 1 } })
       .fromTo(
         pageRef.current,
         { css: { marginTop: '-100%' } },
         { css: { marginTop: 0 }, ease: 'expo.out', duration: 1 },
-      )
-      .set(pageRef.current, { css: { overflow: 'auto' } });
+      );
   };
 
   const closeAnimation = () => {
@@ -63,7 +62,7 @@ function ProjectDetailPage() {
             {projectsData[id]?.link && <a href={projectsData[id].link}> Visitar sitio </a>}
           </div>
           <div className={styles.col2}>
-            <ImagesSlider imagesList={projectsData[id]?.images} />
+            <ImagesSlider imagesList={projectsData[id]?.images} className={styles.slider} />
           </div>
         </div>
       </div>

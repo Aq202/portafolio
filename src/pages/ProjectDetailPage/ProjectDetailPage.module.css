@@ -1,7 +1,6 @@
 .projectDetailPage{
   width: 100%;
   height: calc(100vh - var(--navBar-height--));
-  overflow: hidden;
   position: fixed;
   top: var(--navBar-height--);
 
@@ -29,7 +28,8 @@
   text-align: center;
   width: 100%;
   box-sizing: border-box;
-  margin: 100px 0;
+  margin: 100px auto;
+  width: 80%;
 }
 
 .headerContainer::after{
@@ -99,3 +99,39 @@
 .closeIcon{
     font-size: 25px;
 }
+
+@media only screen and (max-width: 950px){
+  .projectDataContainer{
+    grid-template-columns: 1fr;
+    gap: 100px;
+  }
+}
+
+@media only screen and (max-width: 550px){
+  
+.headerContainer h1{
+  font-size: 12vw;
+}
+
+.projectDataContainer{
+  padding: 100px 5%;
+}
+
+}
+
+@media only screen and (max-width: 500px){
+  
+  .slider, .slider img{
+    width: 80vw;
+  }
+  
+  }
+  
+
+@media only screen and (max-width: 430px){
+  
+  .headerContainer h1{
+    font-size: 15vw;
+  }
+  
+  }

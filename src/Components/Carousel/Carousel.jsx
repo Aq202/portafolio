@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-// import PropTypes from 'prop-types';
 import items from '@helpers/projectsData.js';
 import { scrollbarGray } from '@styles/scrollbar.module.css';
 import styles from './Carousel.module.css';

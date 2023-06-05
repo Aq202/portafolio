@@ -13,6 +13,7 @@ function Banner() {
 
   const blackColumnRef = useRef();
   const purpleColumnRef = useRef();
+  const responsiveColumnRef = useRef();
   const nameText1Ref = useRef();
   const nameText2Ref = useRef();
   const avatarRef = useRef();
@@ -33,6 +34,12 @@ function Banner() {
     )
       .fromTo(
         purpleColumnRef.current,
+        { css: { transform: 'translateY(-100%)' }, duration: 1 },
+        { css: { transform: 'translateY(0%)' }, duration: 1 },
+        0.3,
+      )
+      .fromTo(
+        responsiveColumnRef.current,
         { css: { transform: 'translateY(-100%)' }, duration: 1 },
         { css: { transform: 'translateY(0%)' }, duration: 1 },
         0.3,
@@ -89,6 +96,9 @@ function Banner() {
       tabIndex="0"
     >
       <div className={styles.backgroundMosaic}>
+        <div className={styles.columnResponsive}>
+          <div ref={responsiveColumnRef} />
+        </div>
         <div className={`${styles.column} ${styles.blackColumn}`} ref={blackColumnRef} />
         <div className={`${styles.column} ${styles.purpleColumn}`} ref={purpleColumnRef} />
       </div>
@@ -108,7 +118,7 @@ function Banner() {
                 loop: true,
               }}
               getBeforeInit={(inst) => {
-                ['Estudiante', 'Desarrollador de software', 'Ingeniero en proceso'].forEach(
+                ['Estudiante', 'Desarrollador', 'Ingeniero en proceso', 'Creativo', 'Soñador'].forEach(
                   (item) => {
                     inst.pause(2500);
                     inst.type(item).pause(2000).delete();

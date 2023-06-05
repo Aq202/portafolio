@@ -1,4 +1,4 @@
-.banner{
+.banner {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -6,7 +6,7 @@
   position: relative;
 }
 
-.backgroundMosaic{
+.backgroundMosaic {
   background-color: #C1C1C1;
   width: 100%;
   height: 100%;
@@ -15,7 +15,7 @@
 
 }
 
-.column{
+.column {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -23,18 +23,32 @@
 
 
 .purpleColumn {
- background-color: #ffffff;
- transform: translateY(-100%);
+  background-color: #ffffff;
+  transform: translateY(-100%);
 
 }
 
-.blackColumn{
+.blackColumn {
   background-color: black;
   transform: translateY(100%);
 }
 
+.columnResponsive{
+  grid-column: 1/-1;
+  z-index: 1;
+  display: none;
+  background-color: #c1c1c1;
+}
 
-.imageContainer{
+.columnResponsive > div {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  transform: translateY(-100%);
+}
+
+
+.imageContainer {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -44,53 +58,54 @@
   justify-content: flex-end;
 }
 
-.textContainer{
+.textContainer {
   width: 100%;
   display: grid;
   gap: 20px;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   align-items: center;
+  z-index: 2;
 }
 
-.nameContainer{
+.nameContainer {
   display: flex;
   flex-direction: column;
   margin: 0 30px;
 }
 
-.nameContainer > span{
-  color:#C1C1C1;
+.nameContainer>span {
+  color: #C1C1C1;
   font-size: 30px;
   font-weight: 400;
   opacity: 0;
 }
 
-.nameContainer > h1{
+.nameContainer>h1 {
   color: white;
   font-size: 60px;
   margin: 0;
   opacity: 0;
 }
 
-.imageContainer img{
+.imageContainer img {
   width: 400px;
   opacity: 0;
 }
 
-.writeTextContainer{
+.writeTextContainer {
   margin: 0 25px;
   opacity: 0;
 }
 
-.writeText{
+.writeText {
   font-size: 30px;
-  margin-top: calc(25vh + 60px);
   font-weight: 500;
-
+  display: flex;
+  justify-content: center;
 }
 
-.circlesContainer{
+.circlesContainer {
   position: absolute;
   bottom: 30px;
   left: 30px;
@@ -99,25 +114,25 @@
   opacity: 0;
 }
 
-.circle{
+.circle {
   aspect-ratio: 1/1;
   background-color: white;
 }
 
-.circle1{
+.circle1 {
   width: 40px;
   border-radius: 20px;
 
 }
 
-.circle2{
+.circle2 {
   width: 80px;
   border-radius: 40px;
   margin-left: 40px;
 
 }
 
-.circlesContainerUp{
+.circlesContainerUp {
   position: absolute;
   top: 30px;
   right: 30px;
@@ -127,12 +142,13 @@
   opacity: 0;
 }
 
-.circlesContainerUp .circle{
+.circlesContainerUp .circle {
   background-color: black;
 }
 
-.arrowDownButton{
-  position: absolute;padding: 15px;
+.arrowDownButton {
+  position: absolute;
+  padding: 15px;
   bottom: 30px;
   right: 30px;
   padding: 10px;
@@ -148,57 +164,75 @@
   opacity: 0;
 }
 
-.arrowIcon{
+.arrowIcon {
   color: white;
   font-size: 20px;
 }
 
-.arrowDownButton:hover{
+.arrowDownButton:hover {
   transform: translateY(-5px) !important;
 }
 
-.blackBackground{
+.blackBackground {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: black;
+  background-color: #000000;
   top: 100%;
+  z-index: 2;
 }
 
-@media only screen and (max-width:800px){
-  
-  .backgroundMosaic{
-    gap: 0;
+@media only screen and (max-width:800px) {
+
+  .columnResponsive {
+    display: block;
   }
 
-  .imageContainer{
+  .backgroundMosaic::after {
+    content: "";
+    background-color: #C1C1C1;
+    grid-column: 1/-1;
+    grid-row: 2;
+    z-index: 1;
+  }
+
+  .backgroundMosaic {
+    gap: 0;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 20px 1fr;
+  }
+
+  .imageContainer {
     justify-content: space-between;
   }
 
-  .textContainer{
+  .textContainer {
     grid-template-columns: 1fr;
-    margin-top: 10vh; 
-    
+    margin-top: 10vh;
+
   }
 
-  .nameContainer span{
+  .nameContainer span {
     text-shadow: 2px 2px rgb(0, 0, 0);
   }
 
-  h1{
+  h1 {
     mix-blend-mode: difference;
-            background-blend-mode: difference;
+    background-blend-mode: difference;
   }
 
-  .writeText{
+  .writeText {
     color: #c1c1c1;
     text-shadow: 2px 2px rgb(0, 0, 0);
   }
 
-  .nameContainer{
+  .nameContainer {
     text-align: center;
   }
-  .circlesContainerUp, .circlesContainer{
+
+  .circlesContainerUp, .circlesContainer {
     display: none;
   }
 }
