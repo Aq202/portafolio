@@ -6,13 +6,11 @@ import styles from './Navbar.module.css';
 function Navbar({ refProp }) {
   return (
     <nav className={styles.navbar} ref={refProp}>
-      <div className={styles.logoContainer}>
+      <Link to="/" className={styles.logoContainer}>
         <div className={styles.logo} />
         <span className={styles.logoName}>Diego Aquino</span>
-      </div>
+      </Link>
       <ul>
-
-        <li><Link to="/">Inicio</Link></li>
         <li><Link to="/yo">Sobre mí</Link></li>
         <li><Link to="/portafolio">Portafolio</Link></li>
         <li><Link to="/contacto">Contacto</Link></li>
