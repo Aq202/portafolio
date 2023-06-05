@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Navbar from '../../Navbar/Navbar';
 import ProjectsPage from '../ProjectsPage/ProjectsPage';
 import styles from './NavbarPage.module.css';
-import ProjectDetailPage from '../ProjectDetailPage/ProjectDetailPage';
+import AboutMePage from '../AboutMePage/AboutMePage';
 
 function NavbarPage() {
   const navbarRef = useRef();
@@ -13,8 +13,8 @@ function NavbarPage() {
     <div className={styles.pageContainer} ref={pageContainerRef}>
       <Navbar refProp={navbarRef} />
       <Routes>
-        <Route path="/projects/*" element={<ProjectsPage />} />
-        <Route path="/detail" element={<ProjectDetailPage />} />
+        <Route path="/portafolio/*" element={<ProjectsPage />} />
+        <Route path="/yo" element={<AboutMePage />} />
       </Routes>
 
     </div>

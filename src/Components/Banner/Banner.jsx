@@ -65,7 +65,7 @@ function Banner() {
       )
       .eventCallback('onComplete', () => {
         // cambiar de ruta al finalizar animación de salida
-        navigate('/projects');
+        navigate('/portafolio');
       });
   };
 

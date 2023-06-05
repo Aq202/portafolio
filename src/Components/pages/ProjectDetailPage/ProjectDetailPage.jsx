@@ -37,13 +37,13 @@ function ProjectDetailPage() {
       })
       .eventCallback('onComplete', () => {
         // regresar a la ruta de proyectos
-        navigate('/projects');
+        navigate('/portafolio');
       });
   };
 
   useEffect(() => {
     if (projectsData[id] !== undefined) openAnimation();
-    else navigate('/projects');
+    else navigate('/portafolio');
   }, [id]);
 
   return (

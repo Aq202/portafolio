@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
 
 function Navbar({ refProp }) {
@@ -11,9 +12,10 @@ function Navbar({ refProp }) {
       </div>
       <ul>
 
-        <li><a href="/">Inicio</a></li>
-        <li>Portafolio</li>
-        <li><a href="/">Tareas Web</a></li>
+        <li><Link to="/">Inicio</Link></li>
+        <li><Link to="/yo">Sobre mí</Link></li>
+        <li><Link to="/portafolio">Portafolio</Link></li>
+        <li><Link to="/contacto">Contacto</Link></li>
       </ul>
     </nav>
   );
