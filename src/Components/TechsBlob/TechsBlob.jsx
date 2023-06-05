@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import techsData from '@helpers/techsData';
 import { gsap } from 'gsap';
 import styles from './TechsBlob.module.css';
 import AnimatedBlob from '../AnimatedBlob';
 
-function TechsBlob() {
+function TechsBlob({ className }) {
   const techImgRef = useRef();
   const [img, setImg] = useState();
 
@@ -42,7 +42,7 @@ function TechsBlob() {
   }, []);
 
   return (
-    <div className={styles.blobContainer}>
+    <div className={`${styles.blobContainer} ${className}`}>
       <div className={styles.blob}>
         <AnimatedBlob />
       </div>
@@ -65,6 +65,10 @@ function TechsBlob() {
 
 export default TechsBlob;
 
-TechsBlob.propTypes = {};
+TechsBlob.propTypes = {
+  className: PropTypes.string,
+};
 
-TechsBlob.defaultProps = {};
+TechsBlob.defaultProps = {
+  className: '',
+};

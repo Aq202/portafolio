@@ -15,7 +15,7 @@ function AboutMePage() {
           <li>Alguien que busca la magia en lo ordinario para hacerlo extraordinario.</li>
         </ul>
       </div>
-      <TechsBlob />
+      <TechsBlob className={styles.techsBlob} />
 
     </div>
   );

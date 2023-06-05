@@ -20,22 +20,44 @@
 .title{
   font-size: 60px;
   margin: 0;
+  animation: fadeIn 1s ease;
 }
 
 ul.description{
   list-style: none;
   font-size: 18px;
+  opacity: 0;
+  animation: fadeIn 1s ease 0.1s forwards;
 }
 
 .description span{
   line-height: 4;
   font-size: 25px;
   color:rgb(255, 217, 104);
+  
+}
+
+.techsBlob{
+  opacity: 0;
+  animation: fadeIn 1s ease 0.1s forwards;
 }
 
 
 .description li{
   padding-bottom: 30px;
+}
+
+@keyframes fadeIn {
+
+  from{
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  
 }
 
 @media only screen and (max-width:900px){
