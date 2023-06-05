@@ -5,6 +5,7 @@ import AboutMePage from '@pages/AboutMePage';
 import ProjectsPage from '@pages/ProjectsPage';
 import styles from './NavbarPage.module.css';
 import ContactPage from '../ContactPage/ContactPage';
+import serverBase from '../../helpers/serverBase';
 
 function NavbarPage() {
   const navbarRef = useRef();
@@ -14,9 +15,9 @@ function NavbarPage() {
     <div className={styles.pageContainer} ref={pageContainerRef}>
       <Navbar refProp={navbarRef} />
       <Routes>
-        <Route path="/portafolio/*" element={<ProjectsPage />} />
-        <Route path="/sobre-mi" element={<AboutMePage />} />
-        <Route path="/contacto" element={<ContactPage />} />
+        <Route path={`${serverBase}/portafolio/*`} element={<ProjectsPage />} />
+        <Route path={`${serverBase}/sobre-mi`} element={<AboutMePage />} />
+        <Route path={`${serverBase}/contacto`} element={<ContactPage />} />
       </Routes>
 
     </div>

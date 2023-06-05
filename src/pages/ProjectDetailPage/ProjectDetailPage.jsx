@@ -7,6 +7,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { scrollbarGray } from '@styles/scrollbar.module.css';
 import ImagesSlider from '@components/ImagesSlider';
 import styles from './ProjectDetailPage.module.css';
+import serverBase from '../../helpers/serverBase';
 
 function ProjectDetailPage() {
   const pageRef = useRef();
@@ -35,13 +36,13 @@ function ProjectDetailPage() {
       })
       .eventCallback('onComplete', () => {
         // regresar a la ruta de proyectos
-        navigate('/portafolio');
+        navigate(`${serverBase}/portafolio`);
       });
   };
 
   useEffect(() => {
     if (projectsData[id] !== undefined) openAnimation();
-    else navigate('/portafolio');
+    else navigate(`${serverBase}/portafolio`);
   }, [id]);
 
   return (

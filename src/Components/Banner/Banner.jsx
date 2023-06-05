@@ -6,6 +6,7 @@ import { ImArrowDown2 as ArrowDown } from 'react-icons/im';
 import avatar from '@assets/avatarAnimado.png';
 import { useNavigate } from 'react-router-dom';
 import styles from './Banner.module.css';
+import serverBase from '../../helpers/serverBase';
 
 function Banner() {
   const [lockClosing, setLockClosing] = useState(true);
@@ -73,7 +74,7 @@ function Banner() {
       )
       .eventCallback('onComplete', () => {
         // cambiar de ruta al finalizar animación de salida
-        navigate('/sobre-mi');
+        navigate(`${serverBase}/sobre-mi`);
       });
   };
 

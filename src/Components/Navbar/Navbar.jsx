@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import TypeIt from 'typeit-react';
 import styles from './Navbar.module.css';
+import serverBase from '../../helpers/serverBase';
 
 function Navbar({ refProp }) {
   return (
     <nav className={styles.navbar} ref={refProp}>
-      <NavLink to="/" className={styles.logoContainer}>
+      <NavLink to={serverBase} className={styles.logoContainer}>
         <div className={styles.logo} />
         <TypeIt
           className={styles.logoName}
@@ -20,17 +21,17 @@ function Navbar({ refProp }) {
       </NavLink>
       <ul>
         <li>
-          <NavLink className={({ isActive }) => (isActive ? styles.linkActive : '')} to="/sobre-mi">
+          <NavLink className={({ isActive }) => (isActive ? styles.linkActive : '')} to={`${serverBase}/sobre-mi`}>
             Sobre mí
           </NavLink>
         </li>
         <li>
-          <NavLink className={({ isActive }) => (isActive ? styles.linkActive : '')} to="/portafolio">
+          <NavLink className={({ isActive }) => (isActive ? styles.linkActive : '')} to={`${serverBase}/portafolio`}>
             Portafolio
           </NavLink>
         </li>
         <li>
-          <NavLink className={({ isActive }) => (isActive ? styles.linkActive : '')} to="/contacto">
+          <NavLink className={({ isActive }) => (isActive ? styles.linkActive : '')} to={`${serverBase}/contacto`}>
             Contacto
           </NavLink>
         </li>

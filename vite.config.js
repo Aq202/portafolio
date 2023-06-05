@@ -18,4 +18,5 @@ export default defineConfig({
 
     ],
   },
+  base: 'https://uvgenios.online/aq202',
 });
