@@ -1,2 +1,2 @@
-const serverBase = '/aq202';
+const serverBase = '';
 export default serverBase;
