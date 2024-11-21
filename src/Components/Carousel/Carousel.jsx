@@ -46,9 +46,11 @@ function Carousel() {
       >
         {items.map((item, index) => (
           <CarouselItem
+            key={item.id}
             id={index}
             title={item.title}
             image={item.images[0]}
+            vertical={item.vertical}
             style={{
               transform: `rotateY(${index * 60}deg) translateZ(250px)`,
               marginTop: index === 0 ? 0 : '-70px',

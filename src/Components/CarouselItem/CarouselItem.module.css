@@ -19,6 +19,12 @@
   box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.145);
 }
 
+.carouselItem.vertical img {
+  max-height: 170px;
+  object-fit: cover;
+  object-position: top;
+}
+
 @keyframes appearAnimation {
   from {
     opacity: 0;

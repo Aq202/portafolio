@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { gsap } from 'gsap';
 import styles from './ImagesSlider.module.css';
 
-function ImagesSlider({ imagesList, className }) {
+function ImagesSlider({ imagesList, vertical, className }) {
   const sliderRef = useRef();
   const imagesRef = useRef([]);
 
@@ -27,14 +27,19 @@ function ImagesSlider({ imagesList, className }) {
   }, []);
 
   return (
-    <div className={`${styles.imagesSlider} ${className}`}>
+    <div className={`${styles.imagesSlider} ${vertical ? styles.vertical : ''} ${className}`}>
       <div
         className={styles.imagesContainer}
         style={{ width: `${imagesList.length * 100}%` }}
         ref={sliderRef}
       >
         {imagesList?.map((img, index) => (
-          <img src={img} alt={`Imagen proyecto ${index}`} ref={(elem) => { imagesRef.current[index] = elem; }} />
+          <img
+            key={img}
+            src={img}
+            alt={`Imagen proyecto ${index}`}
+            ref={(elem) => { imagesRef.current[index] = elem; }}
+          />
         ))}
       </div>
     </div>
@@ -45,9 +50,11 @@ export default ImagesSlider;
 
 ImagesSlider.propTypes = {
   imagesList: PropTypes.arrayOf(PropTypes.string).isRequired,
+  vertical: PropTypes.bool,
   className: PropTypes.string,
 };
 
 ImagesSlider.defaultProps = {
   className: '',
+  vertical: false,
 };

@@ -4,10 +4,14 @@ import { Link } from 'react-router-dom';
 import styles from './CarouselItem.module.css';
 
 function CarouselItem({
-  id, title, image, className, style,
+  id, title, image, vertical, className, style,
 }) {
   return (
-    <Link className={`${styles.carouselItem} ${className}`} style={style} to={`${id}`}>
+    <Link
+      className={`${styles.carouselItem} ${vertical ? styles.vertical : ''} ${className}`}
+      style={style}
+      to={`${id}`}
+    >
       <span className={styles.title}>{title}</span>
       <img src={image} alt={title} />
     </Link>
@@ -21,6 +25,7 @@ CarouselItem.propTypes = {
   title: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   className: PropTypes.string,
+  vertical: PropTypes.bool,
   // eslint-disable-next-line react/forbid-prop-types
   style: PropTypes.object,
 };
@@ -28,4 +33,5 @@ CarouselItem.propTypes = {
 CarouselItem.defaultProps = {
   className: '',
   style: null,
+  vertical: false,
 };

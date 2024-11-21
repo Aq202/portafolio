@@ -62,7 +62,11 @@ function ProjectDetailPage() {
             {projectsData[id]?.link && <a href={projectsData[id].link}> Visitar sitio </a>}
           </div>
           <div className={styles.col2}>
-            <ImagesSlider imagesList={projectsData[id]?.images} className={styles.slider} />
+            <ImagesSlider
+              imagesList={projectsData[id]?.images}
+              vertical={projectsData[id]?.vertical}
+              className={styles.slider}
+            />
           </div>
         </div>
       </div>
